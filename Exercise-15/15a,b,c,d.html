@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise</title>
+</head>
+<body>
+  <script type="module">
+    import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+
+  //15a
+  const todayA=dayjs();
+  const todayPlusFive=todayA.add(5,'days');
+  console.log(todayPlusFive.format('MMMM D'));
+  
+  //15b
+  const todayB=dayjs();
+  const todayOnePlusMonth=todayB.add(1,'month');
+  console.log(todayOnePlusMonth.format('MMMM D'));
+
+  //15c
+  const todayC=dayjs();
+  const oneMonthBeforeToday=todayC.subtract(1,'month');
+  console.log(todayC);
+  console.log(oneMonthBeforeToday.format('MMMM D'));
+
+  //15d
+  const todayD=dayjs();
+  console.log(todayD.format('dddd'));
+
+
+  </script>
+
+</body>
+</html>

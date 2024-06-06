@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11u</title>
+</head>
+<body>
+  <script>
+     function removeEgg(arr,ele){
+      const originalArr=arr.slice();
+      let revArr=originalArr.reverse();
+      console.log(`rev arr is:`,revArr);
+      let removeArr=[];
+    let count=0;
+   for(let i=0;i<revArr.length;i++){
+   
+    if(revArr[i]==ele && count<2){
+     // while(count<=2){
+      count++;
+     continue;}
+   else{
+    removeArr.push(revArr[i]);
+   }}
+   console.log(removeArr.reverse());
+   console.log(`given array:`,arr);
+   console.log(`Reversed Array:`,originalArr);
+  }
+
+  removeEgg(['egg','apple','egg','egg','ham'],'egg');
+  </script>
+</body>
+</html>

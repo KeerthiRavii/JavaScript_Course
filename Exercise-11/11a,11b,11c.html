@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11a,11b,11c</title>
+</head>
+<body>
+  <script>
+    const arr1=[10,20,30];
+    arr1[2]=99;
+    console.log(arr1);
+
+   /* function getLastValue(arr){
+      const lastIndex=arr.length-1;
+      return arr[lastIndex];
+    }
+    console.log(getLastValue([1,20,22,24,5]));
+    console.log(getLastValue(['hi','hello','hey']));*/
+    
+ /*const arr2=[1,20,22,24,5];
+   const arr3=['hi','hello','good'];
+   getLastValue(arr2);
+   getLastValue(arr3);
+    function getLastValue(array){
+       const len=array.length-1;
+       console.log(len);
+     } */
+     const arr2=[1,20,22,24,5];
+     const arr3=['hi','hello','good'];
+    function getLastValue(arr){
+      const len=arr.length-1;
+     const  lastEle=arr[len];
+     console.log(lastEle);
+    }
+    getLastValue(arr2);
+    getLastValue(arr3);
+
+    function arraySwap(arr){
+      const len=arr.length-1;
+      let temp=arr[0];
+      arr[0]=arr[len];
+      arr[len]=temp;
+      console.log(arr[0]);
+      console.log(arr[len]);
+    }
+    arraySwap(arr3);
+    arraySwap(arr2);
+      </script>
+</body>
+</html>

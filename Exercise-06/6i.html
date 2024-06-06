@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      6k
+    </title>
+  </head>
+  <body>
+    <button
+    onclick="
+    if(cartQuantity-1<0){
+      alert('Not enough items in the cart');
+    }
+    else{
+      cartQuantity--;
+      console.log(cartQuantity);
+    }
+    "> Remove from cart</button>
+    <button
+    onclick="
+    if(cartQuantity-2<0){
+      alert('Not enough items in the cart');
+    }
+    else{
+      cartQuantity-=2;
+      console.log(cartQuantity);
+    }
+    ">-2</button>
+    <button
+    onclick="
+    if(cartQuantity-3<0){
+      alert('Not enough items in the cart');
+    }
+    else{
+      cartQuantity-=3;
+      console.log(cartQuantity);
+    }
+    ">-3</button>
+ 
+  </body>
+  <script>
+      let cartQuantity=2;
+  </script>
+</html>

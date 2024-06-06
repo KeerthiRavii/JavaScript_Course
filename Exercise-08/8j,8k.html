@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head><title>8i</title>
+       </head>
+  <body>
+    <button  onclick="playGame('heads');">Heads</button>
+    <button onclick="playGame('tails');">Tails</button>
+    <script>
+      const score=JSON.parse(localStorage.getItem('score'))||{
+        win:0,loss:0
+      };
+     // const randomNumber = Math.random();
+    //  const guess='heads';
+      /*const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+      const guess = 'heads';
+      console.log(guess === result ? 'You win!' : 'You lose!');*/
+     
+       
+      function playGame(guess){
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+        if(result===guess){
+          console.log(`Computer picked ${result}.You picked ${guess}.YOU WIN.`);
+        score.win=score.win+1;
+
+        console.log(score);}
+        else{
+        console.log(`Computer picked ${result}.You picked ${guess}.YOU LOSE.`);
+      score.loss=score.loss+1;
+      console.log(score);
+    }
+// localStorage.setItem('score',JSON.stringify(score));
+ }
+    </script>
+  </body>
+</html>

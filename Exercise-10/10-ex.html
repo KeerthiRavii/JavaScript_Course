@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Projects</title>
+  <style>
+    .hc-button{
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+      padding-right: 25px;
+      padding-left: 25px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .is-subscribed{
+      background-color: grey;
+      color: black;
+
+    }
+  </style>
+</head>
+<body>
+  <p> YouTube Subscribe Button</p>
+  <button onclick=" subscribe();" class="js-sub-button hc-button">Subscribe</button>
+  <script>
+   
+   function subscribe(){
+   const buttonElement=document.querySelector('.js-sub-button');
+ 
+  if(buttonElement.innerHTML==='Subscribe'){
+    buttonElement.innerText='Subscribed';
+   buttonElement.classList.add('is-subscribed');
+ // document.querySelector('.sub-button').innerText='Subscribedd';
+    }
+  else{
+    buttonElement.innerHTML='Subscribe';
+  buttonElement.classList.remove('is-subscribed');
+}
+   }
+
+  </script>
+</body>
+</html>

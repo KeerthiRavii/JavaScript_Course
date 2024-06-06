@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon calculator</title>
+</head>
+<style>
+  body{
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .hc-cost-container{
+    font-size: 20px;
+    padding: 8px;
+  }
+  .hc-cal-button{
+    font-size: 20px;
+    padding: 8px;
+    background-color:green;
+    border: none;
+  }
+  .err-msg{
+    color: red;
+  }
+</style>
+<body>
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40=+$10 shipping.</p>
+  <p>Orders over $40=FREE Shipping</p>
+  
+  <input placeholder="cost of order" class="js-cost-container hc-cost-container" onkeydown=" handleCostKeydown(event);">
+  <button onclick="calculate();" class="hc-cal-button">Claculate</button>
+  <p class="js-result"></p>
+  <p class="js-error "></p>
+   <script>
+
+function  handleCostKeydown(event){
+      if(event.key==='Enter'){
+        calculate();}
+    }
+    function calculate(){
+      const inputElement=document.querySelector('.js-cost-container');
+      if(inputElement.value<0){
+        errorEle=document.querySelector('.js-result');
+        errorEle.innerHTML='Error:cost cannot be less than $0';
+        errorEle.classList.add('err-msg');
+    }
+     else{
+    let cost = Number(inputElement.value)*100;
+   // if(cost<0){
+   // document.querySelector('.js-error').innerHTML='Error:cost cannot be less than $0';
+   // }
+     if (cost < 4000) {
+    cost = cost + 1000;
+    }
+    else{
+   document.querySelector('.js-result').innerHTML=`$${cost/100}`;
+    }}
+    }
+</script>
+</body>
+</html>

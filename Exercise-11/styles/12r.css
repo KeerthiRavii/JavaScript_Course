@@ -1,0 +1,29 @@
+body{
+  background-color: black;
+  color:white;
+  font-size: 20px;
+}
+.p{
+  font-size: 40px;
+  font-weight: bold;
+}
+.img{
+  height: 60px;
+}
+.img-but{
+  background-color:black ;
+  border-radius: 60px;
+ border: solid white;
+ border-width: 2px;
+ height: 120px;
+ width: 120px;
+ margin-right: 35px;
+}
+.reset-but,.autoplay-button{
+  font-size: 18px;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  border: none;
+  margin-right: 10px;
+}

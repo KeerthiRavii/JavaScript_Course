@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise</title>
+  <style>
+    .b1{
+      padding: 8px;
+      font-size: 20px;
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .is-toggled{
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="
+  const button1=document.querySelector('.js-b1');
+    Switch(button1);"
+  class="b1 js-b1">Gaming</button>
+
+  <button onclick="
+   const button2=document.querySelector('.js-b2');
+  Switch(button2);"
+ 
+  class="b1 js-b2">Music</button>
+
+  <button onclick="
+  const button3=document.querySelector('.js-b3');
+  Switch(button3);"
+  class="b1 js-b3">Tech</button>
+
+  <script>
+   function Switch(button){
+   
+if(!button.classList.contains('is-toggled')){
+  button.classList.add('is-toggled');
+}
+else{
+  button.classList.remove('is-toggled');
+}
+    }
+  </script>
+</body>
+</html>

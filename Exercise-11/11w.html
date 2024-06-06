@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11w</title>
+</head>
+<body>
+  <script>
+  /* // const arr1=['hello','world','search','good','search'];
+   // const ele1='search';
+   //const arr2=['not','found'];
+   // const ele2='search';
+    findEle(arr1,ele1);
+    findEle(arr2,ele2);
+     findEle(['green','red','blue','red'],'red');   
+     findEle(['green','red','blue','red'],'yeelow'); */
+  function findEle(arr,ele){
+    //let flag=0;
+    for(let i=0;i<arr.length;i++){
+    if(arr[i]===ele){
+        //console.log(i);
+        //flag=1;
+        //return i;
+        return 1;
+      // break;
+       
+      }}
+      //if(flag==0)
+      //console.log('-1');
+      return -1;
+  }
+
+  function uniqueEle(arr){
+    let newArr=[];
+    for(let i=0;i<arr.length;i++){
+     const word=arr[i];
+
+     if(findEle(newArr,word)===-1)
+     newArr.push(word);
+  }
+ console.log(newArr);
+ //return newArr;
+}
+
+  uniqueEle(['green','red','blue','red']);
+ 
+  </script>
+</body>
+</html>

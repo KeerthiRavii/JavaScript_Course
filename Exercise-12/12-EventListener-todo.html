@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo using Event listener</title>
+</head>
+<style>
+  body{
+   font-family: Arial, Helvetica, sans-serif;
+  }
+  .todo-input-grid,.todo-grid{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
+   }
+   .todo-input-grid{
+    margin-bottom: 10px;
+    align-items: stretch;
+   }
+   .cs-add{
+    background-color: green;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+   }
+   .cs-del{
+    background-color: rgb(228, 43, 43);
+    border: none;
+    padding: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   }
+   .cs-name-input,.cs-date-input{
+    padding: 6px;
+    font-size: 15px;
+   }
+</style>
+<body>
+  <div class="todo-input-grid">
+   <input placeholder="Todo name" class="js-ip cs-name-input">
+   <input class="js-date-input cs-date-input" type="date">
+   <button class="js-but cs-add js-add-button">Add</button>
+  </div>
+  <!--p class="js-res"></p>-->
+   <div class="js-todoHtml todo-grid"></div>
+    
+
+<script>
+
+
+    const TodoArr=[{name:'keerthi', dueDate:'2004-03-29 '} ,{name:'manoj',dueDate:' 2000-06-28'}];
+
+    renderTodoList();
+
+    function renderTodoList(){
+    let todoHtml='';
+    
+   //instead of for loop we can use forEach
+
+    TodoArr.forEach(function(todoObject,index) {
+  // const todoObj=TodoArr[i];
+  // const name=todoObj.name;
+  // const dueDate=todoObj.dueDate;
+  const {name,dueDate}=todoObject;
+  const html=`
+  <div> ${name} </div>
+  <div> ${dueDate} </div>
+   <button class="cs-del js-delete-button"> Delete </button>
+  `;
+  //console.log(todoHtml);
+  todoHtml+=html;
+ });
+ /* for(let i=0;i<TodoArr.length;i++){
+     const todoObj=TodoArr[i];
+     // const name=todoObj.name;
+     // const dueDate=todoObj.dueDate;
+     const {name,dueDate}=todoObj;
+     const html=`
+     <div> ${name} </div>
+     <div> ${dueDate} </div>
+      <button onclick="TodoArr.splice(${i},1);
+     renderTodoList();
+     " class="cs-del"> Delete </button>
+     `;
+     //console.log(todoHtml);
+     todoHtml+=html;
+    }*/
+    // console.log(todoHtml);
+    document.querySelector('.js-todoHtml').innerHTML=todoHtml;
+
+    document.querySelectorAll('.js-delete-button').forEach((deleteBtn,index) => {
+   deleteBtn.addEventListener('click',()=>{
+   TodoArr.splice(index,1);
+   renderTodoList();
+  });
+    });
+  }
+
+    function display(){
+     const ipEle=document.querySelector('.js-ip');
+     const ipList=ipEle.value;
+     const dateInput=document.querySelector('.js-date-input');
+     const dueDate=dateInput.value;
+     // store the values in the array
+     TodoArr.push({name:ipList,dueDate:dueDate});
+     // to make the array empty in the beginning
+     ipEle.value='';
+     renderTodoList();
+    // console.log(TodoArr);
+    }
+
+</script>
+</body>
+</html>

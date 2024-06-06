@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge Ex</title>
+<style>
+    .b1{
+      padding: 8px;
+      font-size: 20px;
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .is-toggled{
+      background-color: black;
+      color: white;
+    }
+</style>
+</head>
+<body>
+  <button 
+  class="b1 js-b1" onclick="
+  Switch('.js-b1');">Gaming</button> 
+
+  <button class="b1 js-b2" onclick="
+  Switch('.js-b2');"
+  >Music</button>
+
+  <button class="b1 js-b3"onclick="
+   Switch('.js-b3');"
+   >Tech</button>
+
+<script>
+   function Switch(b){
+   const button=document.querySelector(b);
+   if(!button.classList.contains('is-toggled')){
+   turnOff();
+   button.classList.add('is-toggled');
+   }
+   else{
+   button.classList.remove('is-toggled');
+   }
+   }
+
+   function turnOff(){
+    const prev=document.querySelector('.is-toggled');
+    if(prev){
+      prev.classList.remove('is-toggled');
+    }
+   }
+</script>
+</body>
+</html>

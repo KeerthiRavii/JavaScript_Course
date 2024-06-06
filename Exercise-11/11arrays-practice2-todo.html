@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ <input placeholder="Todo name" class="js-ip">
+   <button onclick="display();" class="js-but">Add</button>
+   <p class="js-res"></p>
+   <div class="js-todoHtml"></div>
+
+   <script>
+
+    const TodoArr=[];
+
+    function display(){
+     const ipEle=document.querySelector('.js-ip');
+     const ipList=ipEle.value;
+     // store the values in the array
+     TodoArr.push(ipList);
+     // to make the array empty in the beginning
+     ipEle.value='';
+     renderTodoList();
+    // console.log(TodoArr);
+    }
+
+    function renderTodoList(){
+    let todoHtml='';
+    for(let i=0;i<TodoArr.length;i++){
+      const todo=TodoArr[i];
+      const html=`<p>${todo}</p>`;
+      //console.log(todoHtml);
+     todoHtml+=html;
+    }
+    // console.log(todoHtml);
+    document.querySelector('.js-todoHtml').innerHTML=todoHtml;
+  }
+   
+</script>
+</body>
+</html>
